@@ -1,23 +1,82 @@
 aid: binx
+
 name: Binx
-description: 'Binx is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://mybinxhealth.com/wp-content/uploads/2026/07/binx-on-counter_1-scaled-e1784737273991.jpg
+
+description: Binx Health delivers point-of-care STI testing solutions that bring lab-quality diagnosis and treatment to a single visit. Their
+  mission is to improve healthcare access through rapid, CLIA‑waived PCR testing for chlamydia and gonorrhea, enabling clinics, urgent care centers,
+  and community health organizations to provide fast, accurate results on‑site. The platform integrates with EHR/LIS systems, supports antibiotic
+  stewardship, and offers reimbursement assistance, aiming to reduce patient loss to follow‑up and enhance community health outcomes.
+
 url: https://raw.githubusercontent.com/api-evangelist/binx/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
+- Healthcare
+- Diagnostics
+- Point-of-Care
+- STI Testing
+- CLIA-waived
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/binx-well-known.yml
+- type: Hosts
+  url: hosts/binx-hosts.yml
+- type: Vendors
+  url: vendors/binx-vendors.yml
+- type: Support
+  url: https://help.mybinxhealth.com/s/
+- type: PrivacyPolicy
+  url: https://mybinxhealth.com/privacy-policy/
+- type: Newsroom
+  url: https://mybinxhealth.com/news/
+- type: Leadership
+  url: https://mybinxhealth.com/team
+- type: Documentation
+  url: https://help.mybinxhealth.com/
+- type: DomainSecurity
+  url: security/binx-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/binx
+  url: https://mybinxhealth.com
+
+apis:
+- name: Binx API
+  description: API for Binx Health platform providing access to STI testing services and integration points.
+  humanURL: https://help.mybinxhealth.com/s/
+  aid: binx:binx-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Help site renders via Salesforce with no machine‑readable OpenAPI spec discovered.
+  evidence:
+  - url: https://help.mybinxhealth.com/s/
+    status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
